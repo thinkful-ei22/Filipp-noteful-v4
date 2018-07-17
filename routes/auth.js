@@ -2,6 +2,8 @@
 
 const express = require('express');
 const passport = require('passport');
+const jwt = require('jsonwebtoken');
+const { JWT_SECRET, JWT_EXPIRY } = require('../config');
 const { Strategy: LocalStrategy } = require('passport-local');
 const User = require('../models/user');
 
@@ -12,8 +14,16 @@ const options = {session: false, failWithError: true};
 
 const localAuth = passport.authenticate('local', options);
 
-router.post('/', localAuth, function (req, res) {
-  return res.json(req.user);
+function createAuthToken (user) {
+  return jwt.sign({ user }, JWT_SECRET, {
+    subject: user.username,
+    expiresIn: JWT_EXPIRY
+  });
+}
+
+router.post('/', localAuth, (req, res) => {
+  const authToken = createAuthToken(req.user);
+  res.json({ authToken });
 });
 
 
