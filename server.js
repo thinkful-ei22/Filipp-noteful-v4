@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const localStrategy = require('./passport/local');
+const jwtStrategy = require('./passport/jwt');
 
 const { PORT, MONGODB_URI } = require('./config');
 
@@ -29,6 +30,7 @@ app.use(express.static('public'));
 app.use(express.json());
 
 passport.use(localStrategy);
+passport.use(jwtStrategy);
 
 // Mount routers
 app.use('/api/notes', notesRouter);
