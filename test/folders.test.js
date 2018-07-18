@@ -13,10 +13,11 @@ const { TEST_MONGODB_URI } = require('../config');
 chai.use(chaiHttp);
 const expect = chai.expect;
 
-describe('Noteful API - Folders', function () {
+xdescribe('Noteful API - Folders', function () {
 
   before(function () {
-    return mongoose.connect(TEST_MONGODB_URI)
+    this.timeout(5000);
+    return mongoose.connect(TEST_MONGODB_URI, {connectTimeoutMS: 4000})
       .then(() => mongoose.connection.db.dropDatabase());
   });
 
