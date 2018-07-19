@@ -1,19 +1,19 @@
 [
   {
     "_id": "333333333333333333333300",
-    "fullname": "Bob User",
+    "fullName": "Bob User",
     "username": "bobuser",
     "password": "$2a$10$T/uWNme0Y/JJM8sL23sxpOxV.ajoDn0MlNz184IwkMyHuzig/IQ7G"
   },
   {
     "_id": "333333333333333333333301",
-    "fullname": "Pat User",
+    "fullName": "Pat User",
     "username": "patuser",
     "password": "$2a$10$T/uWNme0Y/JJM8sL23sxpOxV.ajoDn0MlNz184IwkMyHuzig/IQ7G"
   },
   {
     "_id": "333333333333333333333302",
-    "fullname": "Jane User",
+    "fullName": "Jane User",
     "username": "janeuser",
     "password": "$2a$10$T/uWNme0Y/JJM8sL23sxpOxV.ajoDn0MlNz184IwkMyHuzig/IQ7G"
   }
