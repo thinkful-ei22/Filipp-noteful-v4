@@ -326,8 +326,9 @@ const noteful = (function () {
       event.preventDefault();
 
       const newTagName = $('.js-new-tag-entry').val();
-      api.create('/api/tags', { name: newTagName })
+      api.create('/api/tags', { name: newTagName.val() })
         .then(() => {
+          newTagName.val('');
           return api.search('/api/tags');
         })
         .then(response => {
