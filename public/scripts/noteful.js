@@ -371,7 +371,7 @@ const noteful = (function () {
 
       const signupForm = $(event.currentTarget);
       const newUser = {
-        fullname: signupForm.find('.js-fullname-entry').val(),
+        fullName: signupForm.find('.js-fullname-entry').val(),
         username: signupForm.find('.js-username-entry').val(),
         password: signupForm.find('.js-password-entry').val()
       };
@@ -379,7 +379,7 @@ const noteful = (function () {
       api.create('/api/users', newUser)
         .then(response => {
           signupForm[0].reset();
-          showSuccessMessage(`Thank you, ${response.fullname || response.username} for signing up!`);
+          showSuccessMessage(`Thank you, ${response.fullName || response.username} for signing up!`);
         })
         .catch(handleErrors);
     });
