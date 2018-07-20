@@ -8,6 +8,7 @@ const { JWT_SECRET, JWT_EXPIRY } = require('../config');
 const { Strategy: LocalStrategy } = require('passport-local');
 const User = require('../models/user');
 
+
 const router = express.Router();
 
 
